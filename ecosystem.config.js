@@ -23,7 +23,7 @@ const envShared = {
 
 const envLocal = {
   SERVER_ENDPOINT:'localhost:9999',
-  SERVER_PORT:9999,
+  PORT:9999,
 };
 
 const envDev = {
@@ -40,7 +40,7 @@ const envDev = {
   hyperionEndpoint: 'https://testnet.telos.caleos.io',
   MODE: 'dev',
   SERVER_ENDPOINT: 'api-dev.telos.net',
-  SERVER_PORT: 3000,
+  PORT: 3000,
   TIME_SPAN: 5,
   STLOS_CONTRACT: '0xa9991e4daa44922d00a78b6d986cdf628d46c4dd',
   NETWORK_EVM_RPC: 'https://testnet.telos.net/evm',
@@ -61,7 +61,7 @@ const envProd = {
   hyperionEndpoint: 'https://telos.caleos.io',
   MODE: 'prod',
   SERVER_ENDPOINT: 'api.telos.net',
-  SERVER_PORT: 4000,
+  PORT: 4000,
   TIME_SPAN: 10080,
   STLOS_CONTRACT: '0xb4b01216a5bc8f1c8a33cd990a1239030e60c905',
   NETWORK_EVM_RPC: 'https://mainnet.telos.net/evm',
