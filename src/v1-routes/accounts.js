@@ -6,7 +6,7 @@ const { VoipError } = require('../libs/voip-error');
 const eosioLib = require("../libs/eosio-lib");
 const axios = require("axios");
 
-const CURRENT_VERSION = "v0.1.2";
+const CURRENT_VERSION = "v0.1.3";
 
 const registrationOpts = {
     schema: {
