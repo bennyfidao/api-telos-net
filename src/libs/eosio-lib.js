@@ -2,16 +2,16 @@ const { Api, JsonRpc, RpcError } = require("eosjs");
 const { JsSignatureProvider } = require("eosjs/dist/eosjs-jssig");
 const fetch = require("node-fetch"); // node only; not needed in browsers
 const { TextEncoder, TextDecoder } = require("util");
-const { getSecret } = require("./auth-lib");
+// const { getSecret } = require("./auth-lib");
 const { generateKeyPair } = require("crypto");
 const axios = require("axios");
 
 async function create(accountName, ownerKey, activeKey) {
 
-  const secret = await getSecret(process.env.accountCreatorKey);
-  var secretStringObj = JSON.parse(secret.SecretString);
-  const pk = secretStringObj[process.env.accountCreatorKey];
-
+  // const secret = await getSecret(process.env.accountCreatorKey);
+  // var secretStringObj = JSON.parse(secret.SecretString);
+  // const pk = secretStringObj[process.env.accountCreatorKey];
+  const pk = process.env.accountCreatorKey;
   const signatureProvider = new JsSignatureProvider([pk]);
 
   const rpc = new JsonRpc(process.env.eosioApiEndPoint, { fetch });

@@ -54,3 +54,5 @@ env.yml
 env.example
 stage-artifacts
 .DS_Store
+
+.yarn

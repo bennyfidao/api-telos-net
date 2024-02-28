@@ -358,8 +358,8 @@ const checkAccountOpts = {
 }
 
 async function checkAccountHandler(request, reply) {
-    Sentry.init({ dsn: process.env.sentryDsn });
-    Sentry.configureScope(scope => scope.setExtra('Request Body', request.body));
+    // Sentry.init({ dsn: process.env.sentryDsn });
+    // Sentry.configureScope(scope => scope.setExtra('Request Body', request.body));
 
     try {
         if (!eosioLib.validAccountFormat(request.params.telosAccount)) {
@@ -594,10 +594,10 @@ async function accountsEndpointVersion(request, reply) {
 const endpointVersionOpts = {
     schema: {
         tags: ['accounts'],
-        body: {
-            required: [],
-            type: 'object',
-        },
+        // body: {
+        //     required: [],
+        //     type: 'object',
+        // },
         response: {
             204: {
                 description: 'Endpoint version',
@@ -613,12 +613,12 @@ const endpointVersionOpts = {
 
 
 module.exports = async (fastify, options) => {
-    fastify.post('registrations', registrationOpts, registrationHandler)
-    fastify.post('accounts', createOpts, createHandler)
+    // fastify.post('registrations', registrationOpts, registrationHandler)
+    // fastify.post('accounts', createOpts, createHandler)
     fastify.post('recaptchaCreate', recaptchaCreateOpts, recaptchaCreateHandler)
-    fastify.post('accounts/create4google', create4GoogleOpts, create4GoogleHandler);
+    // fastify.post('accounts/create4google', create4GoogleOpts, create4GoogleHandler);
     fastify.get('accounts/version', endpointVersionOpts, accountsEndpointVersion);
 
-    fastify.get('keys', keygenOpts, keygenHandler)
+    // fastify.get('keys', keygenOpts, keygenHandler)
     fastify.get('accounts/:telosAccount', checkAccountOpts, checkAccountHandler)
 }
