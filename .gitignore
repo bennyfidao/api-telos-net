@@ -56,3 +56,5 @@ stage-artifacts
 .DS_Store
 
 .yarn
+
+start-local.sh
