@@ -5,9 +5,9 @@ const LoggerFactory = require('./LoggerFactory')
 const path = require('path')
 
 const logger = LoggerFactory.create('TelosAPI')
-const port = process.env.SERVER_PORT || 9999
+const port = process.env.PORT || 9999
 
-logger.info(`Starting API with mode ${process.env.MODE} and SERVER_ENDPOINT ${process.env.SERVER_ENDPOINT} and SERVER_PORT ${process.env.SERVER_PORT}`)
+logger.info(`Starting API with mode ${process.env.MODE} and SERVER_ENDPOINT ${process.env.SERVER_ENDPOINT} and PORT ${process.env.PORT}`)
 
 
 const fastify = require('fastify')({
@@ -26,7 +26,8 @@ fastify.register(require('fastify-oas'), require('../swaggerOpts.js'))
 
 fastify.register(fastifyCors, { origin: true })
 
-fastify.register(AutoLoad, { dir: path.join(__dirname, 'v1-routes'), options: { prefix: '/v1/' } });
+// fastify.register(AutoLoad, { dir: path.join(__dirname, 'v1-routes'), options: { prefix: '/v1/' } });
+fastify.register(require('./v1-routes/accounts.js'), { prefix: '/v1/' });
 
 fastify.register(require('fastify-file-upload'))
 

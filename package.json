@@ -7,7 +7,8 @@
     "test": "serverless-bundle test",
     "local": "pm2 start ecosystem.config.js --only api-local  --node-args=\"--inspect-brk\"",
     "dev": "pm2 start ecosystem.config.js --only api-dev  --node-args=\"--inspect-brk\"",
-    "prod": "pm2 start ecosystem.config.js --only api-prod  --node-args=\"--inspect-brk\""
+    "prod": "pm2 start ecosystem.config.js --only api-prod  --node-args=\"--inspect-brk\"",
+    "start": "node src/app.js"
   },
   "author": "Telos Kitchen",
   "license": "MIT",
@@ -15,12 +16,11 @@
     "type": "git",
     "url": "https://gitlab.com/telos-kitchen/api-telos-net.git"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "devDependencies": {
-    "fastify-file-upload": "4.0.0",
-    "serverless-bundle": "^5.5.0",
-    "serverless-webpack": "^5.10.0",
-    "webpack": "^5.76.0",
-    "webpack-node-externals": "^1.7.2"
+    "fastify-file-upload": "4.0.0"
   },
   "dependencies": {
     "@sentry/node": "^5.6.2",
