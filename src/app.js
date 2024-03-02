@@ -29,7 +29,7 @@ fastify.register(fastifyCors, { origin: true })
 // fastify.register(AutoLoad, { dir: path.join(__dirname, 'v1-routes'), options: { prefix: '/v1/' } });
 fastify.register(require('./v1-routes/accounts.js'), { prefix: '/v1/' });
 
-fastify.register(require('fastify-file-upload'))
+// fastify.register(require('fastify-file-upload'))
 
 fastify.get('/', { schema: { hide: true } }, (request, reply) => {
     reply.code(307).redirect('/v1/docs')
