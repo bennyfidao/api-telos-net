@@ -19,9 +19,7 @@
   "engines": {
     "node": "18.x"
   },
-  "devDependencies": {
-    "fastify-file-upload": "4.0.0"
-  },
+  "devDependencies": {},
   "dependencies": {
     "@sentry/node": "^5.6.2",
     "@telosnetwork/telosevm-js": "0.2.0",
